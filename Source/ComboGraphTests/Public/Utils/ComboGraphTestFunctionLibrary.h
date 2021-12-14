@@ -23,5 +23,5 @@ public:
 
 	/** Initializes starting attributes from a data table. */
 	UFUNCTION(BlueprintCallable, Category = "Combo Graph|Testing")
-	static const UAttributeSet* GrantAndInitAttributesForActor(AActor* Actor, TSubclassOf<class UAttributeSet> Attributes, const UDataTable* DataTable);
+	void GrantAndInitAttributesForActor(AActor* Actor, TSubclassOf<class UAttributeSet> Attributes, const UDataTable* DataTable);
 };

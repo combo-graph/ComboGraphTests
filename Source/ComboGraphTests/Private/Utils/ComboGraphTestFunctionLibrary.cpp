@@ -29,13 +29,11 @@ FGameplayAbilitySpecHandle UComboGraphTestFunctionLibrary::GrantAbilityForActor(
 	return AbilityHandle;
 }
 
-const UAttributeSet* UComboGraphTestFunctionLibrary::GrantAndInitAttributesForActor(AActor* Actor, TSubclassOf<UAttributeSet> Attributes, const UDataTable* DataTable)
+void UComboGraphTestFunctionLibrary::GrantAndInitAttributesForActor(AActor* Actor, TSubclassOf<UAttributeSet> Attributes, const UDataTable* DataTable)
 {
 	UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(Actor, true);
 	if (ASC)
 	{
-		return ASC->InitStats(Attributes, DataTable);
+		ASC->InitStats(Attributes, DataTable);
 	}
-
-	return nullptr;
 }
