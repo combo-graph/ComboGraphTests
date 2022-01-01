@@ -1,7 +1,9 @@
 ﻿// Copyright 2021 Mickael Daniel. All Rights Reserved.
 
+#include "ComboGraphTestsLog.h"
 #include "Abilities/ComboGraphTestAbilitySystemCharacter.h"
 #include "Abilities/ComboGraphTestHealthSet.h"
+#include "Abilities/ComboGraphTestNativeTags.h"
 #include "Abilities/ComboGraphTestStaminaSet.h"
 
 BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)
@@ -19,6 +21,8 @@ BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFi
 	UAbilitySystemComponent* TargetASC;
 
 	uint64 InitialFrameCounter = 0;
+
+	void Test(UGameplayAbility* Ability) {}
 
 	void CreateAndSetupWorld()
 	{
@@ -153,24 +157,18 @@ void FComboGraphSpec::Define()
 			TestEqual("Target ASC AttributeSet Stamina is initialized to 100.f", TargetASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 100.f);
 		});
 
-		LatentIt("should decrease stamina on ability activation when playing first montage (async)", [this](const FDoneDelegate& Done)
+		It("should decrease stamina on ability activation when playing first montage", [this]()
 		{
 			TestEqual("Source ASC AttributeSet Stamina is initialized to 100.f", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 100.f);
 
-			// Wait for BeginPlay to kick in for BP fixture and give time to grant the ability
-			SourceActor->OnBeginPlay.BindLambda([this, Done]()
-			{
-				const TArray<FGameplayAbilitySpec> ActivatableAbilities = SourceASC->GetActivatableAbilities();
-				TestEqual("Number of abilities granted is 1", ActivatableAbilities.Num(), 1);
-
-				const bool bSuccess = SourceASC->TryActivateAbilityByClass(AbilityType);
-				TestTrue("Ability was activated", bSuccess);
-				TestEqual("Source ASC AttributeSet Stamina is initialized to 100.f", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 75.f);
-
-				Done.Execute();
-			});
-
 			SourceActor->DispatchBeginPlay();
+
+			const TArray<FGameplayAbilitySpec> ActivatableAbilities = SourceASC->GetActivatableAbilities();
+			TestEqual("Number of abilities granted is 1", ActivatableAbilities.Num(), 1);
+
+			const bool bSuccess = SourceASC->TryActivateAbilityByClass(AbilityType);
+			TestTrue("Ability was activated", bSuccess);
+			TestEqual("Source ASC AttributeSet Stamina is initialized to 100.f", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 75.f);
 		});
 
 		AfterEach([this]()
