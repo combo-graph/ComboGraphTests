@@ -4,7 +4,6 @@
 #include "Abilities/ComboGraphTestAbilitySystemCharacter.h"
 
 #include "AbilitySystemComponent.h"
-#include "AbilitySystemTestAttributeSet.h"
 
 FName AComboGraphTestAbilitySystemCharacter::AbilitySystemComponentName(TEXT("AbilitySystemComponent_Test0"));
 
@@ -22,5 +21,23 @@ UAbilitySystemComponent* AComboGraphTestAbilitySystemCharacter::GetAbilitySystem
 void AComboGraphTestAbilitySystemCharacter::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
-	AbilitySystemComponent->InitStats(UAbilitySystemTestAttributeSet::StaticClass(), NULL);
+
+	check(AbilitySystemComponent);
+
+	// Load data table soft object if valid
+	const UDataTable* InitDataTable = nullptr;
+	if (!AttributesDataTable.IsNull())
+	{
+		UDataTable* DataTable = AttributesDataTable.LoadSynchronous();
+		if (DataTable)
+		{
+			InitDataTable = DataTable;
+		}
+	}
+
+	// Grant attributes and initialize with data table if it was found (can be nullptr)
+	for (const TSubclassOf<UAttributeSet> GrantedAttribute : GrantedAttributes)
+	{
+		AbilitySystemComponent->InitStats(GrantedAttribute, InitDataTable);
+	}
 }

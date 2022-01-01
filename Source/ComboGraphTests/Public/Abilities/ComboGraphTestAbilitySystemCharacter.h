@@ -7,6 +7,9 @@
 #include "GameFramework/Character.h"
 #include "ComboGraphTestAbilitySystemCharacter.generated.h"
 
+class UDataTable;
+class UAttributeSet;
+
 UCLASS()
 class COMBOGRAPHTESTS_API AComboGraphTestAbilitySystemCharacter : public ACharacter, public IAbilitySystemInterface
 {
@@ -17,11 +20,19 @@ public:
 
 	static FName AbilitySystemComponentName;
 
+	/** List of attributes to grant and initialize */
+	UPROPERTY(EditDefaultsOnly, Category="Combo Graph|Test")
+	TArray<TSubclassOf<UAttributeSet>> GrantedAttributes;
+
+	/** Datatable to use to initialize base value of granted attributes */
+	UPROPERTY(EditDefaultsOnly, Category = "Combo Graph|Test", meta = (RequiredAssetDataTags = "RowStructure=AttributeMetaData"))
+	TSoftObjectPtr<UDataTable> AttributesDataTable;
+
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	virtual void PostInitializeComponents() override;
 
 private:
-	/** DefaultPawn collision component */
+	/** Default ASC */
 	UPROPERTY(Category = AbilitySystem, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	class UAbilitySystemComponent* AbilitySystemComponent;
+	UAbilitySystemComponent* AbilitySystemComponent;
 };
