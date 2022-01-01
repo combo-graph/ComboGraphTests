@@ -24,6 +24,11 @@ void AComboGraphTestAbilitySystemCharacter::PostInitializeComponents()
 
 	check(AbilitySystemComponent);
 
+	GrantDefaultAttributes();
+}
+
+void AComboGraphTestAbilitySystemCharacter::GrantDefaultAttributes()
+{
 	// Load data table soft object if valid
 	const UDataTable* InitDataTable = nullptr;
 	if (!AttributesDataTable.IsNull())

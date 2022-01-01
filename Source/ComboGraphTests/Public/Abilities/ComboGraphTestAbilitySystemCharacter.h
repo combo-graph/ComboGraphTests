@@ -31,6 +31,8 @@ public:
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	virtual void PostInitializeComponents() override;
 
+	virtual void GrantDefaultAttributes();
+
 private:
 	/** Default ASC */
 	UPROPERTY(Category = AbilitySystem, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
