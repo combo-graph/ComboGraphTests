@@ -7,6 +7,7 @@
 #include "GameFramework/Character.h"
 #include "ComboGraphTestAbilitySystemCharacter.generated.h"
 
+class UInputMappingContext;
 class UDataTable;
 class UAttributeSet;
 
@@ -28,10 +29,21 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Combo Graph|Test", meta = (RequiredAssetDataTags = "RowStructure=AttributeMetaData"))
 	TSoftObjectPtr<UDataTable> AttributesDataTable;
 
+	/** Input mapping to add to the input system */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Controls")
+	UInputMappingContext* InputMappingContext = nullptr;
+
+	/** Priority to bind mapping context with */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Controls")
+	int MappingContextPriority = 0;
+
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	virtual void PostInitializeComponents() override;
 
 	virtual void GrantDefaultAttributes();
+
+	virtual void BeginPlay() override;
+	FSimpleDelegate OnBeginPlay;
 
 private:
 	/** Default ASC */

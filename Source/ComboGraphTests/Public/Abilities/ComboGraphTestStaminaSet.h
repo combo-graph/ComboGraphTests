@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
-#include "ComboGraphTestAttributeSet.generated.h"
+#include "ComboGraphTestStaminaSet.generated.h"
 
 // Uses macros from AttributeSet.h
 #define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \
@@ -14,40 +14,39 @@
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
 UCLASS()
-class COMBOGRAPHTESTS_API UComboGraphTestAttributeSet : public UAttributeSet
+class COMBOGRAPHTESTS_API UComboGraphTestStaminaSet : public UAttributeSet
 {
 	GENERATED_BODY()
 
 public:
 
 	// Sets default values for this AttributeSet attributes
-	UComboGraphTestAttributeSet();
+	UComboGraphTestStaminaSet();
 
     // AttributeSet Overrides
     virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
     virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-    UPROPERTY(BlueprintReadOnly, Category = "Health Attribute Set", ReplicatedUsing = OnRep_Health)
-    FGameplayAttributeData Health = 0.0;
-    ATTRIBUTE_ACCESSORS(UComboGraphTestAttributeSet, Health)
+    UPROPERTY(BlueprintReadOnly, Category = "Stamina Attribute Set", ReplicatedUsing = OnRep_Stamina)
+    FGameplayAttributeData Stamina = 0.0;
+    ATTRIBUTE_ACCESSORS(UComboGraphTestStaminaSet, Stamina)
 
-	UPROPERTY(BlueprintReadOnly, Category = "Health Attribute Set", ReplicatedUsing = OnRep_MaxHealth)
-	FGameplayAttributeData MaxHealth = 0.0f;
-	ATTRIBUTE_ACCESSORS(UComboGraphTestAttributeSet, MaxHealth)
+	UPROPERTY(BlueprintReadOnly, Category = "Stamina Attribute Set", ReplicatedUsing = OnRep_MaxStamina)
+	FGameplayAttributeData MaxStamina = 0.0f;
+	ATTRIBUTE_ACCESSORS(UComboGraphTestStaminaSet, MaxStamina)
 
-
-	// Damage is a meta attribute used to calculate final damage, which then turns into -Health
+	// Damage is a meta attribute used to calculate final damage, which then turns into -Stamina
 	// Temporary value that only exists on the Server. Not replicated.
-	UPROPERTY(BlueprintReadOnly, Category = "Health Attribute Set", meta = (HideFromLevelInfos))
+	UPROPERTY(BlueprintReadOnly, Category = "Stamina Attribute Set", meta = (HideFromLevelInfos))
 	FGameplayAttributeData Damage;
-	ATTRIBUTE_ACCESSORS(UComboGraphTestAttributeSet, Damage)
+	ATTRIBUTE_ACCESSORS(UComboGraphTestStaminaSet, Damage)
 
 protected:
 
     UFUNCTION()
-    virtual void OnRep_Health(const FGameplayAttributeData& OldHealth);
+    virtual void OnRep_Stamina(const FGameplayAttributeData& OldStamina);
 
 	UFUNCTION()
-	virtual void OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth);
+	virtual void OnRep_MaxStamina(const FGameplayAttributeData& OldMaxStamina);
 };

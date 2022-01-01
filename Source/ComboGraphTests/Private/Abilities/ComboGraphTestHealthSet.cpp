@@ -1,24 +1,24 @@
 // Copyright 2021 Mickael Daniel. All Rights Reserved.
 
 
-#include "Abilities/ComboGraphTestAttributeSet.h"
+#include "Abilities/ComboGraphTestHealthSet.h"
 
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
 
 // Sets default values
-UComboGraphTestAttributeSet::UComboGraphTestAttributeSet()
+UComboGraphTestHealthSet::UComboGraphTestHealthSet()
 {
 	// Default constructor
 }
 
-void UComboGraphTestAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
+void UComboGraphTestHealthSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
 {
     // This is called whenever attributes change, so for max attributes we want to scale the current totals to match
     Super::PreAttributeChange(Attribute, NewValue);
 }
 
-void UComboGraphTestAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
+void UComboGraphTestHealthSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
 {
     Super::PostGameplayEffectExecute(Data);
 
@@ -42,20 +42,20 @@ void UComboGraphTestAttributeSet::PostGameplayEffectExecute(const FGameplayEffec
 	}
 }
 
-void UComboGraphTestAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+void UComboGraphTestHealthSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-    DOREPLIFETIME_CONDITION_NOTIFY(UComboGraphTestAttributeSet, Health, COND_None, REPNOTIFY_Always);
-    DOREPLIFETIME_CONDITION_NOTIFY(UComboGraphTestAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
+    DOREPLIFETIME_CONDITION_NOTIFY(UComboGraphTestHealthSet, Health, COND_None, REPNOTIFY_Always);
+    DOREPLIFETIME_CONDITION_NOTIFY(UComboGraphTestHealthSet, MaxHealth, COND_None, REPNOTIFY_Always);
 }
 
-void UComboGraphTestAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth)
+void UComboGraphTestHealthSet::OnRep_Health(const FGameplayAttributeData& OldHealth)
 {
-    GAMEPLAYATTRIBUTE_REPNOTIFY(UComboGraphTestAttributeSet, Health, OldHealth);
+    GAMEPLAYATTRIBUTE_REPNOTIFY(UComboGraphTestHealthSet, Health, OldHealth);
 }
 
-void UComboGraphTestAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth)
+void UComboGraphTestHealthSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth)
 {
-    GAMEPLAYATTRIBUTE_REPNOTIFY(UComboGraphTestAttributeSet, MaxHealth, OldMaxHealth);
+    GAMEPLAYATTRIBUTE_REPNOTIFY(UComboGraphTestHealthSet, MaxHealth, OldMaxHealth);
 }

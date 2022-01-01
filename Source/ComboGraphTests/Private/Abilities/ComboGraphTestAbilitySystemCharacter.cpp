@@ -4,6 +4,7 @@
 #include "Abilities/ComboGraphTestAbilitySystemCharacter.h"
 
 #include "AbilitySystemComponent.h"
+#include "EnhancedInputSubsystems.h"
 
 FName AComboGraphTestAbilitySystemCharacter::AbilitySystemComponentName(TEXT("AbilitySystemComponent_Test0"));
 
@@ -45,4 +46,10 @@ void AComboGraphTestAbilitySystemCharacter::GrantDefaultAttributes()
 	{
 		AbilitySystemComponent->InitStats(GrantedAttribute, InitDataTable);
 	}
+}
+
+void AComboGraphTestAbilitySystemCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	OnBeginPlay.ExecuteIfBound();
 }
