@@ -22,6 +22,8 @@ struct COMBOGRAPHTESTS_API FComboGraphTestNativeTags : public FGameplayTagNative
 		ComboTestGraphBegin = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphStarted"));
 		ComboTestGraphEnd = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphEnded"));
 		ComboTestGraphStateChange = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphStateChanged"));
+		ComboTestGraphStateChange = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.Montage.Hit"));
+		ComboTestGraphStateChange = Manager.AddNativeGameplayTag(TEXT("SetByCaller.ComboGraphTest.Damage"));
 	}
 
 private:
