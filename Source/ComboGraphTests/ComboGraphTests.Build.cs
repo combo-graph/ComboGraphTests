@@ -42,6 +42,7 @@ public class ComboGraphTests : ModuleRules
 				"Slate",
 				"SlateCore",
 				"EnhancedInput",
+				"ComboGraph",
 				// ... add private dependencies that you statically link with here ...
 			}
 			);

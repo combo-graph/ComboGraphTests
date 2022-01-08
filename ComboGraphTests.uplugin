@@ -29,6 +29,10 @@
 		{
 			"Name": "EnhancedInput",
 			"Enabled": true
+		},
+		{
+			"Name": "ComboGraph",
+			"Enabled": true
 		}
 	]
 }

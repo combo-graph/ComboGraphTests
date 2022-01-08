@@ -53,3 +53,21 @@ void AComboGraphTestAbilitySystemCharacter::BeginPlay()
 	Super::BeginPlay();
 	OnBeginPlay.ExecuteIfBound();
 }
+
+void AComboGraphTestAbilitySystemCharacter::PawnClientRestart()
+{
+	Super::PawnClientRestart();
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	}
+}
+
+void AComboGraphTestAbilitySystemCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	}
+}

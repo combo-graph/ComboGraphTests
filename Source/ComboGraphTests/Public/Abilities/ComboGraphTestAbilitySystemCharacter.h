@@ -7,6 +7,7 @@
 #include "GameFramework/Character.h"
 #include "ComboGraphTestAbilitySystemCharacter.generated.h"
 
+class UGameplayAbility;
 class UInputMappingContext;
 class UDataTable;
 class UAttributeSet;
@@ -44,6 +45,9 @@ public:
 
 	virtual void BeginPlay() override;
 	FSimpleDelegate OnBeginPlay;
+
+	virtual void PawnClientRestart() override;
+	virtual void PossessedBy(AController* NewController) override;
 
 private:
 	/** Default ASC */

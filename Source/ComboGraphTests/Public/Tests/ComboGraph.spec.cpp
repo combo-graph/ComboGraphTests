@@ -120,7 +120,7 @@ void FComboGraphSpec::Define()
 			// Setup tests
 			CreateAndSetupWorld();
 
-			ActorType = StaticLoadClass(AComboGraphTestAbilitySystemCharacter::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/BP_ComboTestCharacter.BP_ComboTestCharacter_C"));
+			ActorType = StaticLoadClass(AComboGraphTestAbilitySystemCharacter::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/Characters/BP_ComboTestCharacter.BP_ComboTestCharacter_C"));
 			AbilityType = StaticLoadClass(UGameplayAbility::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/GA_Combo_TestFixture.GA_Combo_TestFixture_C"));
 
 			// set up the source actor
