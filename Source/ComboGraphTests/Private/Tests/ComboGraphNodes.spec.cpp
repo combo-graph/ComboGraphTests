@@ -3,6 +3,7 @@
 #include "ComboGraphTestsLog.h"
 #include "Abilities/ComboGraphTestAbilitySystemCharacter.h"
 #include "Abilities/ComboGraphTestStaminaSet.h"
+#include "Abilities/Tasks/ComboGraphAbilityTask_StartGraph.h"
 #include "Graph/ComboGraph.h"
 #include "Graph/ComboGraphNodeAnimBase.h"
 
@@ -11,6 +12,7 @@ BEGIN_DEFINE_SPEC(FComboGraphNodesSpec, "ComboGraph.Nodes", EAutomationTestFlags
 
 	UComboGraph* ComboGraph;
 	UComboGraphNodeAnimBase* Node;
+	TSubclassOf<UGameplayAbility> AbilityType;
 
 	AComboGraphTestAbilitySystemCharacter* SourceActor;
 	UAbilitySystemComponent* SourceASC;
@@ -19,6 +21,8 @@ BEGIN_DEFINE_SPEC(FComboGraphNodesSpec, "ComboGraph.Nodes", EAutomationTestFlags
 	UAbilitySystemComponent* TargetASC;
 
 	uint64 InitialFrameCounter = 0;
+
+	bool bBeginPlayDispatched = false;
 
 	void CreateAndSetupWorld()
 	{
@@ -49,7 +53,14 @@ void FComboGraphNodesSpec::Define()
 		BeforeEach([this]()
 		{
 			// Setup tests
-			// CreateAndSetupWorld();
+			CreateAndSetupWorld();
+
+			UClass* ActorType = StaticLoadClass(AComboGraphTestAbilitySystemCharacter::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/Characters/BP_ComboTestCharacter.BP_ComboTestCharacter_C"));
+			AbilityType = StaticLoadClass(UGameplayAbility::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/GA_Combo_TestFixture.GA_Combo_TestFixture_C"));
+
+			// set up the source actor
+			SourceActor = CastChecked<AComboGraphTestAbilitySystemCharacter>(World->SpawnActor(ActorType, nullptr, nullptr, FActorSpawnParameters()));
+			SourceASC = SourceActor->GetAbilitySystemComponent();
 
 			ComboGraph = Cast<UComboGraph>(StaticLoadObject(UComboGraph::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/CG_Test_Fixture.CG_Test_Fixture")));
 		});
@@ -77,6 +88,19 @@ void FComboGraphNodesSpec::Define()
 			{
 				check(ComboGraph);
 				Node = Cast<UComboGraphNodeAnimBase>(ComboGraph->FirstNode);
+
+				if (!bBeginPlayDispatched)
+				{
+					bBeginPlayDispatched = true;
+
+					// Make sure ability is granted
+					TESTS_LOG(Display, TEXT("DispatchBeginPlay()"))
+					SourceActor->DispatchBeginPlay();
+
+					// And activated once, so as to make sure Node is updated with gameplay task owner interface calls
+					TESTS_LOG(Display, TEXT("TryActivateAbilityByClass(%s)"), *GetNameSafe(AbilityType))
+					SourceASC->TryActivateAbilityByClass(AbilityType);
+				}
 			});
 
 			It("first node should be anim based", [this]()
@@ -105,17 +129,46 @@ void FComboGraphNodesSpec::Define()
 			It("GetChildren()", [this]()
 			{
 				TestEqual("child num", Node->K2_GetChildren().Num(), 1);
+
+				TArray<UComboGraphNodeAnimBase*> Children = Node->K2_GetChildren();
+				const UComboGraphNodeAnimBase* Child = Children[0];
+
+				TestEqual("Child Title", Child->GetNodeTitle().ToString(), "Melee_B");
+				TestEqual("Child Title", Child->K2_GetNodeTitle().ToString(), "Melee_B");
 			});
 
 			It("GetOwningGraph()", [this]()
 			{
-				TestEqual("owning graph", Node->K2_GetOwningGraph(), ComboGraph);
+				TestEqual("Owning Graph", Node->K2_GetOwningGraph(), ComboGraph);
+			});
+
+			It("GetOwningTask()", [this]()
+			{
+				const UComboGraphAbilityTask_StartGraph* Task = Node->K2_GetOwningTask();
+				TESTS_LOG(Display, TEXT("GetOwningTask() %s"), *GetNameSafe(Task))
+				TestTrue("Owning Task", Task != nullptr);
+				TestTrue("Owning Task Name Valid", Task->GetName().StartsWith("ComboGraphAbilityTask_StartGraph_"));
+			});
+
+			It("GetOwningAbility()", [this]()
+			{
+				const UGameplayAbility* Ability = Node->K2_GetOwningAbility();
+				TESTS_LOG(Display, TEXT("GetOwningAbility() %s"), *GetNameSafe(Ability))
+				TestTrue("Owning Ability", Ability != nullptr);
+				TestEqual("Owning Ability Name", Ability->GetName(), "GA_Combo_TestFixture_C_0");
+			});
+
+			It("GetPreviousNode()", [this]()
+			{
+				TestTrue("Previous Node is not set if not continuing combo", Node->K2_GetPreviousNode() == nullptr);
+
+				// TODO: Transition to next node and check it up
 			});
 		});
 
 		AfterEach([this]()
 		{
-			// TeardownWorld();
+			TeardownWorld();
 		});
 	});
 }
