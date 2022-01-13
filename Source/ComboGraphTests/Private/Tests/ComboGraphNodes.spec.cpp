@@ -22,7 +22,7 @@ BEGIN_DEFINE_SPEC(FComboGraphNodesSpec, "ComboGraph.Nodes", EAutomationTestFlags
 
 	uint64 InitialFrameCounter = 0;
 
-	bool bBeginPlayDispatched = false;
+	// bool bBeginPlayDispatched = false;
 
 	void CreateAndSetupWorld()
 	{
@@ -50,6 +50,9 @@ void FComboGraphNodesSpec::Define()
 {
 	Describe("ComboGraph Nodes API", [this]()
 	{
+
+		// Wish we had Before() / After() BDD hooks ...
+
 		BeforeEach([this]()
 		{
 			// Setup tests
@@ -89,10 +92,8 @@ void FComboGraphNodesSpec::Define()
 				check(ComboGraph);
 				Node = Cast<UComboGraphNodeAnimBase>(ComboGraph->FirstNode);
 
-				if (!bBeginPlayDispatched)
+				if (!SourceActor->HasActorBegunPlay())
 				{
-					bBeginPlayDispatched = true;
-
 					// Make sure ability is granted
 					TESTS_LOG(Display, TEXT("DispatchBeginPlay()"))
 					SourceActor->DispatchBeginPlay();
@@ -147,7 +148,7 @@ void FComboGraphNodesSpec::Define()
 				const UComboGraphAbilityTask_StartGraph* Task = Node->K2_GetOwningTask();
 				TESTS_LOG(Display, TEXT("GetOwningTask() %s"), *GetNameSafe(Task))
 				TestTrue("Owning Task", Task != nullptr);
-				TestTrue("Owning Task Name Valid", Task->GetName().StartsWith("ComboGraphAbilityTask_StartGraph_"));
+				TestTrue("Owning Task Name Valid", GetNameSafe(Task).StartsWith("ComboGraphAbilityTask_StartGraph_"));
 			});
 
 			It("GetOwningAbility()", [this]()
@@ -155,7 +156,7 @@ void FComboGraphNodesSpec::Define()
 				const UGameplayAbility* Ability = Node->K2_GetOwningAbility();
 				TESTS_LOG(Display, TEXT("GetOwningAbility() %s"), *GetNameSafe(Ability))
 				TestTrue("Owning Ability", Ability != nullptr);
-				TestEqual("Owning Ability Name", Ability->GetName(), "GA_Combo_TestFixture_C_0");
+				TestEqual("Owning Ability Name", *GetNameSafe(Ability), "GA_Combo_TestFixture_C_0");
 			});
 
 			It("GetPreviousNode()", [this]()
@@ -167,25 +168,25 @@ void FComboGraphNodesSpec::Define()
 			It("GetOwnerActor()", [this]()
 			{
 				TestTrue("Owner Actor is returning something", Node->GetOwnerActor() != nullptr);
-				TestEqual("Avatar Actor is the one expected", Node->GetOwnerActor()->GetName(), SourceActor->GetName());
+				TestEqual("Avatar Actor is the one expected", GetNameSafe(Node->GetOwnerActor()), SourceActor->GetName());
 			});
 
 			It("GetAvatarActor()", [this]()
 			{
 				TestTrue("Avatar Actor is returning something", Node->GetAvatarActor() != nullptr);
-				TestEqual("Avatar Actor is the one expected", Node->GetAvatarActor()->GetName(), SourceActor->GetName());
+				TestEqual("Avatar Actor is the one expected", GetNameSafe(Node->GetAvatarActor()), SourceActor->GetName());
 			});
 
 			It("GetAvatarAsPawn()", [this]()
 			{
 				TestTrue("Avatar Actor is returning something", Node->GetAvatarAsPawn() != nullptr);
-				TestEqual("Avatar Actor is the one expected", Node->GetAvatarAsPawn()->GetName(), SourceActor->GetName());
+				TestEqual("Avatar Actor is the one expected", GetNameSafe(Node->GetAvatarAsPawn()), SourceActor->GetName());
 			});
 
 			It("GetAvatarAsCharacter()", [this]()
 			{
 				TestTrue("Avatar Actor is returning something", Node->GetAvatarAsCharacter() != nullptr);
-				TestEqual("Avatar Actor is the one expected", Node->GetAvatarAsCharacter()->GetName(), SourceActor->GetName());
+				TestEqual("Avatar Actor is the one expected", GetNameSafe(Node->GetAvatarAsCharacter()), SourceActor->GetName());
 			});
 		});
 
