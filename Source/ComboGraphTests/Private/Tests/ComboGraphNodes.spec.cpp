@@ -161,8 +161,31 @@ void FComboGraphNodesSpec::Define()
 			It("GetPreviousNode()", [this]()
 			{
 				TestTrue("Previous Node is not set if not continuing combo", Node->K2_GetPreviousNode() == nullptr);
-
 				// TODO: Transition to next node and check it up
+			});
+
+			It("GetOwnerActor()", [this]()
+			{
+				TestTrue("Owner Actor is returning something", Node->GetOwnerActor() != nullptr);
+				TestEqual("Avatar Actor is the one expected", Node->GetOwnerActor()->GetName(), SourceActor->GetName());
+			});
+
+			It("GetAvatarActor()", [this]()
+			{
+				TestTrue("Avatar Actor is returning something", Node->GetAvatarActor() != nullptr);
+				TestEqual("Avatar Actor is the one expected", Node->GetAvatarActor()->GetName(), SourceActor->GetName());
+			});
+
+			It("GetAvatarAsPawn()", [this]()
+			{
+				TestTrue("Avatar Actor is returning something", Node->GetAvatarAsPawn() != nullptr);
+				TestEqual("Avatar Actor is the one expected", Node->GetAvatarAsPawn()->GetName(), SourceActor->GetName());
+			});
+
+			It("GetAvatarAsCharacter()", [this]()
+			{
+				TestTrue("Avatar Actor is returning something", Node->GetAvatarAsCharacter() != nullptr);
+				TestEqual("Avatar Actor is the one expected", Node->GetAvatarAsCharacter()->GetName(), SourceActor->GetName());
 			});
 		});
 
