@@ -1,4 +1,4 @@
-﻿// Copyright 2021 Mickael Daniel. All Rights Reserved.
+// Copyright 2021 Mickael Daniel. All Rights Reserved.
 
 #include "ComboGraphTestsLog.h"
 #include "Abilities/ComboGraphTestAbilitySystemCharacter.h"
@@ -44,6 +44,20 @@ BEGIN_DEFINE_SPEC(FComboGraphNodesSpec, "ComboGraph.Nodes", EAutomationTestFlags
 		GEngine->DestroyWorldContext(World);
 		World->DestroyWorld(false);
 	}
+
+	void TickWorld(float Time)
+	{
+		constexpr float Step = 0.1f;
+		while (Time > 0.f)
+		{
+			World->Tick(ELevelTick::LEVELTICK_All, FMath::Min(Time, Step));
+			Time -= Step;
+
+			// This is terrible but required for subticking like this.
+			// we could always cache the real GFrameCounter at the start of our tests and restore it when finished.
+			GFrameCounter++;
+		}
+	}
 END_DEFINE_SPEC(FComboGraphNodesSpec)
 
 void FComboGraphNodesSpec::Define()
@@ -58,7 +72,7 @@ void FComboGraphNodesSpec::Define()
 			// Setup tests
 			CreateAndSetupWorld();
 
-			UClass* ActorType = StaticLoadClass(AComboGraphTestAbilitySystemCharacter::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/Characters/BP_ComboTestCharacter.BP_ComboTestCharacter_C"));
+			UClass* ActorType = StaticLoadClass(AComboGraphTestAbilitySystemCharacter::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/Characters/BP_Test_AbilitySystemCharacter.BP_Test_AbilitySystemCharacter_C"));
 			AbilityType = StaticLoadClass(UGameplayAbility::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/GA_Combo_TestFixture.GA_Combo_TestFixture_C"));
 
 			// set up the source actor
@@ -87,7 +101,7 @@ void FComboGraphNodesSpec::Define()
 
 		Describe("UComboGraphNodeAnimBase", [this]()
 		{
-			BeforeEach([this]()
+			LatentBeforeEach([this](const FDoneDelegate& Done)
 			{
 				check(ComboGraph);
 				Node = Cast<UComboGraphNodeAnimBase>(ComboGraph->FirstNode);
@@ -101,6 +115,13 @@ void FComboGraphNodesSpec::Define()
 					// And activated once, so as to make sure Node is updated with gameplay task owner interface calls
 					TESTS_LOG(Display, TEXT("TryActivateAbilityByClass(%s)"), *GetNameSafe(AbilityType))
 					SourceASC->TryActivateAbilityByClass(AbilityType);
+
+					World->GetTimerManager().SetTimerForNextTick([Done]()
+					{
+						Done.Execute();
+					});
+
+					TickWorld(0.1f);
 				}
 			});
 

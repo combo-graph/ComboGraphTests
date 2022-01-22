@@ -1,4 +1,4 @@
-﻿// Copyright 2021 Mickael Daniel. All Rights Reserved.
+// Copyright 2021 Mickael Daniel. All Rights Reserved.
 
 #include "ComboGraphTestsLog.h"
 #include "Abilities/ComboGraphTestAbilitySystemCharacter.h"
@@ -45,6 +45,19 @@ BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFi
 		World->DestroyWorld(false);
 	}
 
+	void TickWorld(float Time)
+	{
+		constexpr float Step = 0.1f;
+		while (Time > 0.f)
+		{
+			World->Tick(ELevelTick::LEVELTICK_All, FMath::Min(Time, Step));
+			Time -= Step;
+
+			// This is terrible but required for subticking like this.
+			// we could always cache the real GFrameCounter at the start of our tests and restore it when finished.
+			GFrameCounter++;
+		}
+	}
 
 	UDataTable* FComboGraphSpec::CreateAttributesDataTable()
 	{
@@ -120,7 +133,7 @@ void FComboGraphSpec::Define()
 			// Setup tests
 			CreateAndSetupWorld();
 
-			ActorType = StaticLoadClass(AComboGraphTestAbilitySystemCharacter::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/Characters/BP_ComboTestCharacter.BP_ComboTestCharacter_C"));
+			ActorType = StaticLoadClass(AComboGraphTestAbilitySystemCharacter::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/Characters/BP_Test_AbilitySystemCharacter.BP_Test_AbilitySystemCharacter_C"));
 			AbilityType = StaticLoadClass(UGameplayAbility::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/GA_Combo_TestFixture.GA_Combo_TestFixture_C"));
 
 			// set up the source actor
@@ -157,18 +170,26 @@ void FComboGraphSpec::Define()
 			TestEqual("Target ASC AttributeSet Stamina is initialized to 100.f", TargetASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 100.f);
 		});
 
-		It("should decrease stamina on ability activation when playing first montage", [this]()
+		LatentIt("should decrease stamina on ability activation when playing first montage", [this](const FDoneDelegate& Done)
 		{
 			TestEqual("Source ASC AttributeSet Stamina is initialized to 100.f", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 100.f);
 
 			SourceActor->DispatchBeginPlay();
 
 			const TArray<FGameplayAbilitySpec> ActivatableAbilities = SourceASC->GetActivatableAbilities();
-			TestEqual("Number of abilities granted is 1", ActivatableAbilities.Num(), 1);
+			TestEqual("Number of abilities granted is 2", ActivatableAbilities.Num(), 2);
 
 			const bool bSuccess = SourceASC->TryActivateAbilityByClass(AbilityType);
 			TestTrue("Ability was activated", bSuccess);
-			TestEqual("Source ASC AttributeSet Stamina is initialized to 100.f", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 75.f);
+
+			World->GetTimerManager().SetTimerForNextTick([this, Done]()
+			{
+				TestEqual("Source ASC AttributeSet Stamina is expected to be 75.f now", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 75.f);
+				Done.Execute();
+			});
+
+			// Tick world a little so that timer is processed
+			TickWorld(0.1f);
 		});
 
 		AfterEach([this]()

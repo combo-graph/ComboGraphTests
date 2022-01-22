@@ -1,9 +1,10 @@
-﻿// Copyright 2021 Mickael Daniel. All Rights Reserved.
+// Copyright 2021 Mickael Daniel. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
+#include "GameplayEffectTypes.h"
 #include "GameFramework/Character.h"
 #include "ComboGraphTestAbilitySystemCharacter.generated.h"
 
@@ -34,12 +35,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Controls")
 	UInputMappingContext* InputMappingContext = nullptr;
 
+	UFUNCTION(BlueprintImplementableEvent, Category="Combo Graph|Test")
+	void OnAttributeChange(FGameplayAttribute Attribute, const FString& AttributeName, float NewValue, float OldValue, float Delta, const struct FGameplayTagContainer SourceTags);
+
 	/** Priority to bind mapping context with */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Controls")
 	int MappingContextPriority = 0;
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	virtual void PostInitializeComponents() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	virtual void GrantDefaultAttributes();
 
@@ -48,6 +53,9 @@ public:
 
 	virtual void PawnClientRestart() override;
 	virtual void PossessedBy(AController* NewController) override;
+
+protected:
+	void ReceiveAttributeChange(const FOnAttributeChangeData& OnAttributeChangeData);
 
 private:
 	/** Default ASC */
