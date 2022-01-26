@@ -1,15 +1,15 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.0",
-	"FriendlyName": "ComboGraphTests",
-	"Description": "",
+	"VersionName": "1.0.0",
+	"FriendlyName": "Combo Graph Tests",
+	"Description": "Unit / Feature tests for Combo Graph plugin.",
 	"Category": "Testing",
-	"CreatedBy": "",
-	"CreatedByURL": "",
-	"DocsURL": "",
+	"CreatedBy": "Mickael Daniel <mklabs>",
+	"CreatedByURL": "https://mklabs.github.io",
+	"DocsURL": "https://combo-graph.github.io",
 	"MarketplaceURL": "",
-	"SupportURL": "",
+	"SupportURL": "https://github.com/combo-graph/tests",
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
@@ -18,7 +18,11 @@
 		{
 			"Name": "ComboGraphTests",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Win32"
+			]
 		}
 	],
 	"Plugins": [
