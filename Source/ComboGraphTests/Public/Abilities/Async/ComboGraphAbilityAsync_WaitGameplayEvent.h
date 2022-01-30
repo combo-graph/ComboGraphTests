@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 2022 Mickael Daniel. All Rights Reserved.
 #pragma once
 
 #include "CoreMinimal.h"
@@ -9,7 +9,7 @@
 
 class UAbilitySystemComponent;
 
-UCLASS()
+UCLASS(BlueprintType)
 class COMBOGRAPHTESTS_API UComboGraphAbilityAsync_WaitGameplayEvent : public UComboGraphTestAbilityAsync
 {
 	GENERATED_BODY()

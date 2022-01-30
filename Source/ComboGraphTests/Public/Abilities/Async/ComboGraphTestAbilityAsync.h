@@ -1,9 +1,8 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 2022 Mickael Daniel. All Rights Reserved.
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintAsyncActionBase.h"
-#include "GameplayEffectTypes.h"
 #include "Abilities/GameplayAbilityTypes.h"
 #include "ComboGraphTestAbilityAsync.generated.h"
 
@@ -11,9 +10,10 @@ class UAbilitySystemComponent;
 
 /**
  *	AbilityAsync is a base class for ability-specific BlueprintAsyncActions.
+ *
  *  These are similar to ability tasks, but they can be executed from any blueprint like an actor and are not tied to a specific ability lifespan.
  *
- *  Backported here from 4.27 since it's not UAbilityAsync is not available in 4.26 and we need it for functional test maps.
+ *  Backported here from 4.27 since UAbilityAsync is not available in 4.26 and we need it for functional test maps.
  */
 
 UCLASS(Abstract, meta = (ExposedAsyncProxy = AsyncAction))

@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 2022 Mickael Daniel. All Rights Reserved.
 
 #include "Abilities/Async/ComboGraphAbilityAsync_WaitGameplayEvent.h"
 #include "AbilitySystemGlobals.h"
@@ -6,12 +6,15 @@
 
 UComboGraphAbilityAsync_WaitGameplayEvent* UComboGraphAbilityAsync_WaitGameplayEvent::WaitGameplayEventToActorForComboGraphTesting(AActor* TargetActor, FGameplayTag EventTag, bool OnlyTriggerOnce, bool OnlyMatchExact)
 {
-	UComboGraphAbilityAsync_WaitGameplayEvent* MyObj = NewObject<UComboGraphAbilityAsync_WaitGameplayEvent>();
-	MyObj->SetAbilityActor(TargetActor);
-	MyObj->Tag = EventTag;
-	MyObj->OnlyTriggerOnce = OnlyTriggerOnce;
-	MyObj->OnlyMatchExact = OnlyMatchExact;
-	return MyObj;
+	UComboGraphAbilityAsync_WaitGameplayEvent* AsyncAction = NewObject<UComboGraphAbilityAsync_WaitGameplayEvent>();
+	if (AsyncAction)
+	{
+		AsyncAction->SetAbilityActor(TargetActor);
+		AsyncAction->Tag = EventTag;
+		AsyncAction->OnlyTriggerOnce = OnlyTriggerOnce;
+		AsyncAction->OnlyMatchExact = OnlyMatchExact;
+	}
+	return AsyncAction;
 }
 
 void UComboGraphAbilityAsync_WaitGameplayEvent::Activate()
