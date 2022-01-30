@@ -24,4 +24,10 @@ public:
 	/** Initializes starting attributes from a data table. */
 	UFUNCTION(BlueprintCallable, Category = "Combo Graph|Testing")
 	void GrantAndInitAttributesForActor(AActor* Actor, TSubclassOf<class UAttributeSet> Attributes, const UDataTable* DataTable);
+
+	/**
+	 * Returns the Gameplay Attribute name as String
+	 */
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Combo Graph|Testing")
+	static FString GetDebugStringFromAttribute(FGameplayAttribute Attribute);
 };

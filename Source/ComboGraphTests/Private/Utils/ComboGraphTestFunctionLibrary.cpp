@@ -37,3 +37,8 @@ void UComboGraphTestFunctionLibrary::GrantAndInitAttributesForActor(AActor* Acto
 		ASC->InitStats(Attributes, DataTable);
 	}
 }
+
+FString UComboGraphTestFunctionLibrary::GetDebugStringFromAttribute(FGameplayAttribute Attribute)
+{
+	return Attribute.GetName();
+}
