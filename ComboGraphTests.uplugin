@@ -13,14 +13,15 @@
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
-	"Installed": false,
+	"Installed": true,
 	"Modules": [
 		{
 			"Name": "ComboGraphTests",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
-			"WhitelistPlatforms": [
-				"Win64"
+			"PlatformAllowList": [
+				"Win64",
+				"Mac"
 			]
 		}
 	],
