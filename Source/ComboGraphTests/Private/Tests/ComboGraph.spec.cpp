@@ -184,7 +184,7 @@ void FComboGraphSpec::Define()
 
 			World->GetTimerManager().SetTimerForNextTick([this, Done]()
 			{
-				TestEqual("Source ASC AttributeSet Stamina is expected to be 75.f now", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 75.f);
+				TestEqual("Source ASC AttributeSet Stamina is expected to be 90.f now", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 90.f);
 				Done.Execute();
 			});
 
