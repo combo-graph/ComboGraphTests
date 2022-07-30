@@ -26,8 +26,8 @@ jobs:
           
       - name: Setup test report list index.html (see https://gist.github.com/mklabs/a0219dedb01498bde4a054f90d7f66dd)
         run: |
-          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/e8dc8ff4f60c2957af5ac00d9d1d8c00815c3b41/generate-html.js > generate-html.js
-          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/e8dc8ff4f60c2957af5ac00d9d1d8c00815c3b41/generate-readme.js > generate-readme.js
+          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/a7a8e668511622e43a2c9068b77fca2698b18463/generate-html.js > generate-html.js
+          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/a7a8e668511622e43a2c9068b77fca2698b18463/generate-readme.js > generate-readme.js
           node generate-html.js > index.html
           node generate-readme.js > readme.md
           rm generate-html.js
