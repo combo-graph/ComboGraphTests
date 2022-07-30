@@ -29,7 +29,7 @@ jobs:
           
       - name: Setup test report list index.html (see https://gist.github.com/mklabs/a0219dedb01498bde4a054f90d7f66dd)
         run: |
-          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/ab2d893425943d4566e686b010ac8e7644949227/generate-html.js > generate-html.js
+          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/b8459bec0df796bc45c95746d0248e6dedef4022/generate-html.js > generate-html.js
           node generate-html.js > index.html
           rm generate-html.js
           
