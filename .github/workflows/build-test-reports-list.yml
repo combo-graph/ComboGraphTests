@@ -26,12 +26,16 @@ jobs:
           
       - name: Setup test report list index.html (see https://gist.github.com/mklabs/a0219dedb01498bde4a054f90d7f66dd)
         run: |
-          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/b8459bec0df796bc45c95746d0248e6dedef4022/generate-html.js > generate-html.js
+          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/81a2f0fdea12d90a38fa3e6021ae364bc0afc670/generate-html.js > generate-html.js
+          curl https://gist.githubusercontent.com/mklabs/a0219dedb01498bde4a054f90d7f66dd/raw/81a2f0fdea12d90a38fa3e6021ae364bc0afc670/generate-readme.js > generate-readme.js
           node generate-html.js > index.html
+          node generate-readme.js > readme.md
           rm generate-html.js
+          rm generate-readme.js
           
       - name: Deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
+          keep_files: true
