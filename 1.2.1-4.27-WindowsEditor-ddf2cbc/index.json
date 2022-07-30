@@ -1,12 +1,12 @@
 ﻿{
 	"clientDescriptor": "//UE4/Release-4.27 - 18319896 - Windows",
-	"reportCreatedOn": "2022.07.30-22.14.54",
+	"reportCreatedOn": "2022.07.30-22.47.22",
 	"succeeded": 22,
 	"succeededWithWarnings": 1,
 	"failed": 0,
 	"notRun": 0,
 	"inProcess": 1,
-	"totalDuration": 9.887629508972168,
+	"totalDuration": 6.5002031326293945,
 	"comparisonExported": false,
 	"comparisonExportDirectory": "",
 	"tests": [
@@ -43,7 +43,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -55,7 +55,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -67,7 +67,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -79,7 +79,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -91,7 +91,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -103,7 +103,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -115,7 +115,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -127,7 +127,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -139,7 +139,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -151,7 +151,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -163,7 +163,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -175,7 +175,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -187,7 +187,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -199,7 +199,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -211,7 +211,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -223,7 +223,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -235,7 +235,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -247,7 +247,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -259,7 +259,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -271,7 +271,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -283,7 +283,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -295,7 +295,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -307,7 +307,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -319,7 +319,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				},
 				{
 					"event":
@@ -331,7 +331,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.49"
+					"timestamp": "2022.07.30-20.47.17"
 				}
 			],
 			"warnings": 25,
@@ -389,7 +389,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.50"
+					"timestamp": "2022.07.30-20.47.18"
 				},
 				{
 					"event":
@@ -401,7 +401,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.50"
+					"timestamp": "2022.07.30-20.47.18"
 				}
 			],
 			"warnings": 0,
@@ -423,7 +423,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.50"
+					"timestamp": "2022.07.30-20.47.19"
 				},
 				{
 					"event":
@@ -435,7 +435,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.50"
+					"timestamp": "2022.07.30-20.47.19"
 				},
 				{
 					"event":
@@ -447,7 +447,7 @@
 					},
 					"filename": "E:\\runners\\combo-graph\\_work\\combo-graph\\combo-graph\\_work\\TP_Blank\\Plugins\\ComboGraphTests\\Source\\ComboGraphTests\\Private\\Tests\\ComboGraphNodes.spec.cpp",
 					"lineNumber": 138,
-					"timestamp": "2022.07.30-20.14.50"
+					"timestamp": "2022.07.30-20.47.19"
 				}
 			],
 			"warnings": 0,
@@ -469,7 +469,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.51"
+					"timestamp": "2022.07.30-20.47.19"
 				},
 				{
 					"event":
@@ -481,7 +481,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.51"
+					"timestamp": "2022.07.30-20.47.19"
 				}
 			],
 			"warnings": 0,
@@ -503,7 +503,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.51"
+					"timestamp": "2022.07.30-20.47.19"
 				},
 				{
 					"event":
@@ -515,7 +515,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.51"
+					"timestamp": "2022.07.30-20.47.19"
 				}
 			],
 			"warnings": 0,
@@ -537,7 +537,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.51"
+					"timestamp": "2022.07.30-20.47.19"
 				},
 				{
 					"event":
@@ -549,7 +549,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.51"
+					"timestamp": "2022.07.30-20.47.19"
 				}
 			],
 			"warnings": 0,
@@ -571,7 +571,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.51"
+					"timestamp": "2022.07.30-20.47.20"
 				},
 				{
 					"event":
@@ -583,7 +583,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.51"
+					"timestamp": "2022.07.30-20.47.20"
 				}
 			],
 			"warnings": 0,
@@ -605,7 +605,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.52"
+					"timestamp": "2022.07.30-20.47.20"
 				},
 				{
 					"event":
@@ -617,7 +617,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.52"
+					"timestamp": "2022.07.30-20.47.20"
 				}
 			],
 			"warnings": 0,
@@ -639,7 +639,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.52"
+					"timestamp": "2022.07.30-20.47.20"
 				},
 				{
 					"event":
@@ -651,7 +651,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.52"
+					"timestamp": "2022.07.30-20.47.20"
 				}
 			],
 			"warnings": 0,
@@ -673,7 +673,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.52"
+					"timestamp": "2022.07.30-20.47.20"
 				},
 				{
 					"event":
@@ -685,7 +685,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.52"
+					"timestamp": "2022.07.30-20.47.20"
 				}
 			],
 			"warnings": 0,
@@ -707,7 +707,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.52"
+					"timestamp": "2022.07.30-20.47.21"
 				},
 				{
 					"event":
@@ -719,7 +719,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.52"
+					"timestamp": "2022.07.30-20.47.21"
 				}
 			],
 			"warnings": 0,
@@ -741,7 +741,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.21"
 				},
 				{
 					"event":
@@ -753,7 +753,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.21"
 				}
 			],
 			"warnings": 0,
@@ -775,7 +775,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.21"
 				},
 				{
 					"event":
@@ -787,7 +787,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.21"
 				},
 				{
 					"event":
@@ -799,7 +799,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.21"
 				}
 			],
 			"warnings": 0,
@@ -821,7 +821,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.21"
 				},
 				{
 					"event":
@@ -833,7 +833,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.21"
 				}
 			],
 			"warnings": 0,
@@ -855,7 +855,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.22"
 				},
 				{
 					"event":
@@ -867,7 +867,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.22"
 				},
 				{
 					"event":
@@ -879,7 +879,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.53"
+					"timestamp": "2022.07.30-20.47.22"
 				}
 			],
 			"warnings": 0,
@@ -901,7 +901,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.54"
+					"timestamp": "2022.07.30-20.47.22"
 				},
 				{
 					"event":
@@ -913,7 +913,7 @@
 					},
 					"filename": "D:\\Build\\++UE4\\Sync\\Engine\\Source\\Runtime\\Core\\Private\\Logging\\LogMacros.cpp",
 					"lineNumber": 97,
-					"timestamp": "2022.07.30-20.14.54"
+					"timestamp": "2022.07.30-20.47.22"
 				}
 			],
 			"warnings": 0,
