@@ -9,9 +9,14 @@
 // ReSharper disable once CppPolymorphicClassWithNonVirtualPublicDestructor
 struct COMBOGRAPHTESTS_API FComboGraphTestNativeTags : public FGameplayTagNativeAdder
 {
-	FGameplayTag ComboTestGraphBegin;
-	FGameplayTag ComboTestGraphEnd;
-	FGameplayTag ComboTestGraphStateChange;
+	FGameplayTag GraphStarted;
+	FGameplayTag GraphEnded;
+	FGameplayTag GraphStateChanged;
+	
+	FGameplayTag EventMontageHit;
+	FGameplayTag SetByCallerDamage;
+	
+	FGameplayTag AbilityMeleeCombo;
 
 	FORCEINLINE static const FComboGraphTestNativeTags& Get() { return NativeTags; }
 
@@ -19,11 +24,15 @@ struct COMBOGRAPHTESTS_API FComboGraphTestNativeTags : public FGameplayTagNative
 	{
 		UGameplayTagsManager& Manager = UGameplayTagsManager::Get();
 
-		ComboTestGraphBegin = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphStarted"));
-		ComboTestGraphEnd = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphEnded"));
-		ComboTestGraphStateChange = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphStateChanged"));
-		ComboTestGraphStateChange = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.Montage.Hit"));
-		ComboTestGraphStateChange = Manager.AddNativeGameplayTag(TEXT("SetByCaller.ComboGraphTest.Damage"));
+		GraphStarted = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphStarted"));
+		GraphEnded = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphEnded"));
+		GraphStateChanged = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.GraphStateChanged"));
+		
+		EventMontageHit = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Event.Montage.Hit"));
+		
+		SetByCallerDamage = Manager.AddNativeGameplayTag(TEXT("SetByCaller.ComboGraphTest.Damage"));
+		
+		AbilityMeleeCombo = Manager.AddNativeGameplayTag(TEXT("ComboGraphTest.Ability.Melee.Combo"));
 	}
 
 private:
