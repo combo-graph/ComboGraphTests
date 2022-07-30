@@ -59,7 +59,7 @@ BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFi
 		}
 	}
 
-	UDataTable* FComboGraphSpec::CreateAttributesDataTable()
+	UDataTable* CreateAttributesDataTable() const
 	{
 		FString CSV(TEXT("---,BaseValue,MinValue,MaxValue,DerivedAttributeInfo,bCanStack"));
 		CSV.Append(TEXT("\r\nComboGraphTestHealthSet.MaxHealth,\"500.000000\",\"0.000000\",\"1.000000\",\"\",\"False\""));
@@ -69,7 +69,7 @@ BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFi
 		DataTable->RowStruct = FAttributeMetaData::StaticStruct();
 		DataTable->CreateTableFromCSVString(CSV);
 
-		const FAttributeMetaData* Row = (const FAttributeMetaData*)DataTable->GetRowMap()["ComboGraphTestHealthSet.MaxHealth"];
+		const FAttributeMetaData* Row = reinterpret_cast<const FAttributeMetaData*>(DataTable->GetRowMap()["ComboGraphTestHealthSet.MaxHealth"]);
 		if (Row)
 		{
 			check(Row->BaseValue == 500.f);
