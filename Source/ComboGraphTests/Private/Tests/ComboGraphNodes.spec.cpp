@@ -135,6 +135,7 @@ void FComboGraphNodesSpec::Define()
 
 				It("GetPreviousNode()", [this]()
 				{
+					AddInfo(FString::Printf(TEXT("Test against %s"), *GetNameSafe(ComboGraph->EntryNode)));
 					const UComboGraphAbilityTask_StartGraph* Task = Node->K2_GetOwningTask();
 					TestTrue("Owning Task", Task != nullptr);
 					TestTrue("Owning Task Name Valid", GetNameSafe(Task).StartsWith("ComboGraphAbilityTask_StartGraph_"));
