@@ -19,9 +19,10 @@
 			"Name": "ComboGraphTests",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
-			"PlatformAllowList": [
+			"WhitelistPlatforms": [
 				"Win64",
-				"Mac"
+				"Mac",
+				"Linux"
 			]
 		}
 	],
