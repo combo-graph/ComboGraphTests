@@ -17,13 +17,12 @@ BEGIN_DEFINE_SPEC(FComboGraphNodesSpec, "ComboGraph.Nodes", EAutomationTestFlags
 
 	AComboGraphTestAbilitySystemCharacter* SourceActor;
 	UAbilitySystemComponent* SourceASC;
+	APlayerController* SourceController;
 
 	AComboGraphTestAbilitySystemCharacter* TargetActor;
 	UAbilitySystemComponent* TargetASC;
 
 	uint64 InitialFrameCounter = 0;
-
-	// bool bBeginPlayDispatched = false;
 
 	void CreateAndSetupWorld()
 	{
@@ -76,6 +75,10 @@ void FComboGraphNodesSpec::Define()
 			// set up the source actor
 			SourceActor = CastChecked<AComboGraphTestAbilitySystemCharacter>(World->SpawnActor(ActorType, nullptr, nullptr, FActorSpawnParameters()));
 			SourceASC = SourceActor->GetAbilitySystemComponent();
+
+			// Possess and make source actor behave like a player controller actor
+			SourceController = World->SpawnActor<APlayerController>();
+			SourceController->Possess(SourceActor);
 
 			ComboGraph = Cast<UComboGraph>(StaticLoadObject(UComboGraph::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/CG_Test_Fixture.CG_Test_Fixture")));
 		});
@@ -234,6 +237,22 @@ void FComboGraphNodesSpec::Define()
 
 		AfterEach([this]()
 		{
+			// Destroy the actors
+			if (SourceActor)
+			{
+				World->EditorDestroyActor(SourceActor, false);
+			}
+
+			if (SourceController)
+			{
+				World->EditorDestroyActor(SourceController, false);
+			}
+
+			if (TargetActor)
+			{
+				World->EditorDestroyActor(TargetActor, false);
+			}
+
 			TeardownWorld();
 		});
 	});
