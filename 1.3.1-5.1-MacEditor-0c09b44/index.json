@@ -1,0 +1,837 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "Mac-mini-de-MICKAEL.local",
+			"instance": "Mac-mini-de-MICKAEL.local-EE61BCA1BD42E1D1B83EC69F4759FA5E",
+			"platform": "MacEditor",
+			"oSVersion": "12.6.1 21G217",
+			"model": "Default",
+			"gPU": "Intel Iris",
+			"cPUModel": "Intel(R) Core(TM) i5-4308U CPU @ 2.80GHz",
+			"rAMInGB": 8,
+			"renderMode": "SM5",
+			"rHI": "",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2022.11.17-18.50.46",
+	"succeeded": 24,
+	"succeededWithWarnings": 0,
+	"failed": 0,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 13.314949989318848,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "should have attributes initialized",
+			"fullTestPath": "ComboGraph.Basics.should have attributes initialized",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.014790639281272888,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "should setup world and such",
+			"fullTestPath": "ComboGraph.Basics.should setup world and such",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.012801282107830048,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "should decrease stamina on ability activation when playing first montage",
+			"fullTestPath": "ComboGraph.Feature Testing.should decrease stamina on ability activation when playing first montage",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.37580078840255737,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogStaticMesh: Building static mesh SM_Cube_Weapon...",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.29"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogSkeletalMesh: Waiting for skinned assets to be ready 0/1 (SK_Mannequin) ...",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.29"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "should have attributes initialized",
+			"fullTestPath": "ComboGraph.Feature Testing.should have attributes initialized",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.019567575305700302,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "should setup world and such",
+			"fullTestPath": "ComboGraph.Feature Testing.should setup world and such",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.018141020089387894,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "ComboGraph should be created",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.ComboGraph should be created",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.019625347107648849,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "EntryNode is created",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.ComboGraph.EntryNode is created",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.017907667905092239,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "FirstNode is created",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.ComboGraph.FirstNode is created",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.018422733992338181,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetCurrentNode()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphAbilityTask_StartGraph.GetCurrentNode()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.020845483988523483,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetPreviousNode()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphAbilityTask_StartGraph.GetPreviousNode()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.020636040717363358,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "Test against ComboGraphNodeEntry_0",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "first node should be anim based",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.first node should be anim based",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.020385213196277618,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetAnimationAsset()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAnimationAsset()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.024594970047473907,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.30"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetAnimationClass()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAnimationClass()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.018616393208503723,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetAvatarActor()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAvatarActor()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.016047172248363495,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetAvatarAsCharacter()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAvatarAsCharacter()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.016249421983957291,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetAvatarAsPawn()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAvatarAsPawn()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.015754733234643936,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetChildren()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetChildren()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.027975544333457947,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.31"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetNodeTitle()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetNodeTitle()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.029271382838487625,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetOwnerActor()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetOwnerActor()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.020393297076225281,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetOwningAbility()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetOwningAbility()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.02316775918006897,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: GetOwningAbility() GA_Combo_TestFixture_C_0",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetOwningGraph()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetOwningGraph()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.023771438747644424,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.32"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetOwningTask()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetOwningTask()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.022457301616668701,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.33"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.33"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: GetOwningTask() ComboGraphAbilityTask_StartGraph_14",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.33"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GetPreviousNode()",
+			"fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetPreviousNode()",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 0.023494184017181396,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: DispatchBeginPlay()",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.33"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "LogComboGraphTests: TryActivateAbilityByClass(GA_Combo_TestFixture_C)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.33"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "F_ComboGraph_Test",
+			"fullTestPath": "Project.Functional Tests.GraphTests.FunctionalTests.Maps.F_ComboGraph_Map.F_ComboGraph_Test",
+			"state": "Success",
+			"deviceInstance": [],
+			"duration": 12.494232177734375,
+			"dateTime": "0001.01.01-00.00.00",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "F_ComboGraph_Test_2: Float assertion passed (Should have stamina decreased by 10  (0))",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.36"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "F_ComboGraph_Test_2: Float assertion passed (Should have stamina decreased by 10  (1))",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.37"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "F_ComboGraph_Test_2: Float assertion passed (Should have stamina decreased by 10  (2))",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.39"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "F_ComboGraph_Test_2: Float assertion passed (Should have stamina decreased by 10  (3))",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.41"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "F_ComboGraph_Test_2: Float assertion passed (Should have stamina decreased by 10  (4))",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.43"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "F_ComboGraph_Test_2: Float assertion passed (Should have stamina decreased by 10  (5))",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.44"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "F_ComboGraph_Test_2: Float assertion passed (Should have stamina decreased to 25 after 3 attacks)",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2022.11.17-17.50.46"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}
