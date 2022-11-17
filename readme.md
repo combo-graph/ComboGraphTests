@@ -2,14 +2,15 @@
 
 | Build | Json | Date | Status |
 | ----- | ---- | ---- | ------ |
+| [1.3.1-5.0-MacEditor-15f8baf](1.3.1-5.0-MacEditor-15f8baf/index.html) | [index.json](1.3.1-5.0-MacEditor-15f8baf/index.json) | Thu, 17 Nov 2022 16:51:05 GMT | success |
+| [1.2.1-5.0-WindowsEditor-ddf2cbc](1.2.1-5.0-WindowsEditor-ddf2cbc/index.html) | [index.json](1.2.1-5.0-WindowsEditor-ddf2cbc/index.json) | Thu, 17 Nov 2022 15:51:32 GMT | success |
+| [1.2.1-5.0-WindowsEditor-f9aa521](1.2.1-5.0-WindowsEditor-f9aa521/index.html) | [index.json](1.2.1-5.0-WindowsEditor-f9aa521/index.json) | Thu, 17 Nov 2022 15:51:32 GMT | success |
+| [1.2.1-5.0-WindowsEditor-3c888e7](1.2.1-5.0-WindowsEditor-3c888e7/index.html) | [index.json](1.2.1-5.0-WindowsEditor-3c888e7/index.json) | Thu, 17 Nov 2022 15:51:32 GMT | success |
+| [1.2.1-5.0-MacEditor-9795db6](1.2.1-5.0-MacEditor-9795db6/index.html) | [index.json](1.2.1-5.0-MacEditor-9795db6/index.json) | Thu, 17 Nov 2022 15:51:32 GMT | success |
+| [1.2.1-5.0-DarwinEditor-f9aa521](1.2.1-5.0-DarwinEditor-f9aa521/index.html) | [index.json](1.2.1-5.0-DarwinEditor-f9aa521/index.json) | Thu, 17 Nov 2022 15:51:32 GMT | success |
 | [1.3.1-5.0-MacEditor-dff2dc7](1.3.1-5.0-MacEditor-dff2dc7/index.html) | [index.json](1.3.1-5.0-MacEditor-dff2dc7/index.json) | Fri, 05 Aug 2022 18:37:20 GMT | success |
 | [1.3.1-5.0-WindowsEditor-dff2dc7](1.3.1-5.0-WindowsEditor-dff2dc7/index.html) | [index.json](1.3.1-5.0-WindowsEditor-dff2dc7/index.json) | Fri, 05 Aug 2022 17:42:05 GMT | success |
 | [1.3.1-4.27-WindowsEditor-dff2dc7](1.3.1-4.27-WindowsEditor-dff2dc7/index.html) | [index.json](1.3.1-4.27-WindowsEditor-dff2dc7/index.json) | Fri, 05 Aug 2022 17:35:17 GMT | success |
-| [1.2.1-5.0-WindowsEditor-ddf2cbc](1.2.1-5.0-WindowsEditor-ddf2cbc/index.html) | [index.json](1.2.1-5.0-WindowsEditor-ddf2cbc/index.json) | Fri, 05 Aug 2022 16:37:44 GMT | success |
-| [1.2.1-5.0-WindowsEditor-f9aa521](1.2.1-5.0-WindowsEditor-f9aa521/index.html) | [index.json](1.2.1-5.0-WindowsEditor-f9aa521/index.json) | Fri, 05 Aug 2022 16:37:44 GMT | success |
-| [1.2.1-5.0-WindowsEditor-3c888e7](1.2.1-5.0-WindowsEditor-3c888e7/index.html) | [index.json](1.2.1-5.0-WindowsEditor-3c888e7/index.json) | Fri, 05 Aug 2022 16:37:44 GMT | success |
-| [1.2.1-5.0-MacEditor-9795db6](1.2.1-5.0-MacEditor-9795db6/index.html) | [index.json](1.2.1-5.0-MacEditor-9795db6/index.json) | Fri, 05 Aug 2022 16:37:44 GMT | success |
-| [1.2.1-5.0-DarwinEditor-f9aa521](1.2.1-5.0-DarwinEditor-f9aa521/index.html) | [index.json](1.2.1-5.0-DarwinEditor-f9aa521/index.json) | Fri, 05 Aug 2022 16:37:44 GMT | success |
 | [1.3.0-5.0-MacEditor-d0e65c7](1.3.0-5.0-MacEditor-d0e65c7/index.html) | [index.json](1.3.0-5.0-MacEditor-d0e65c7/index.json) | Fri, 05 Aug 2022 14:41:09 GMT | success |
 | [1.3.0-5.0-WindowsEditor-d0e65c7](1.3.0-5.0-WindowsEditor-d0e65c7/index.html) | [index.json](1.3.0-5.0-WindowsEditor-d0e65c7/index.json) | Fri, 05 Aug 2022 14:05:30 GMT | success |
 | [1.3.0-4.27-WindowsEditor-d0e65c7](1.3.0-4.27-WindowsEditor-d0e65c7/index.html) | [index.json](1.3.0-4.27-WindowsEditor-d0e65c7/index.json) | Fri, 05 Aug 2022 13:58:47 GMT | success |
@@ -47,6 +48,6 @@
 
 ---
 
-Generated on Fri, 05 Aug 2022 16:37:44 GMT
+Generated on Thu, 17 Nov 2022 15:51:32 GMT
 
 
