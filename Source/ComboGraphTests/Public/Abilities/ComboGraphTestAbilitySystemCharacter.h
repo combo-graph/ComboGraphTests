@@ -28,7 +28,7 @@ public:
 	TArray<TSubclassOf<UAttributeSet>> GrantedAttributes;
 
 	/** Datatable to use to initialize base value of granted attributes */
-	UPROPERTY(EditDefaultsOnly, Category = "Combo Graph|Test", meta = (RequiredAssetDataTags = "RowStructure=AttributeMetaData"))
+	UPROPERTY(EditDefaultsOnly, Category = "Combo Graph|Test", meta = (RequiredAssetDataTags = "RowStructure=/Script/GameplayAbilities.AttributeMetaData"))
 	TSoftObjectPtr<UDataTable> AttributesDataTable;
 
 	/** Input mapping to add to the input system */
