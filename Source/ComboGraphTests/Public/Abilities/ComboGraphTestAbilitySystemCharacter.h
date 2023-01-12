@@ -33,7 +33,7 @@ public:
 
 	/** Input mapping to add to the input system */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Controls")
-	UInputMappingContext* InputMappingContext = nullptr;
+	TObjectPtr<UInputMappingContext> InputMappingContext = nullptr;
 
 	UFUNCTION(BlueprintImplementableEvent, Category="Combo Graph|Test")
 	void OnAttributeChange(FGameplayAttribute Attribute, const FString& AttributeName, float NewValue, float OldValue, float Delta, const struct FGameplayTagContainer SourceTags);
@@ -60,5 +60,5 @@ protected:
 private:
 	/** Default ASC */
 	UPROPERTY(Category = AbilitySystem, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	UAbilitySystemComponent* AbilitySystemComponent;
+	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 };
