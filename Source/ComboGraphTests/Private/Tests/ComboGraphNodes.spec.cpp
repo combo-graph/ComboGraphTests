@@ -7,6 +7,8 @@
 #include "Graph/ComboGraph.h"
 #include "Graph/ComboGraphNodeAnimBase.h"
 #include "Graph/ComboGraphNodeEntry.h"
+#include "Misc/AutomationTest.h"
+#include "Runtime/Launch/Resources/Version.h"
 
 BEGIN_DEFINE_SPEC(FComboGraphNodesSpec, "ComboGraph.Nodes", EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)
 	UWorld* World;
@@ -100,7 +102,12 @@ void FComboGraphNodesSpec::Define()
 			TestTrue("EntryNode", ComboGraph->FirstNode != nullptr);
 		});
 
+		// Latent action seems to be broken on 5.3 preview
+#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION == 3
+		xDescribe("Task / Node", [this]()
+#else
 		Describe("Task / Node", [this]()
+#endif
 		{
 			LatentBeforeEach([this](const FDoneDelegate& Done)
 			{
@@ -122,7 +129,7 @@ void FComboGraphNodesSpec::Define()
 						Done.Execute();
 					});
 
-					TickWorld(0.1f);
+					TickWorld(1.f);
 				}
 			});
 
