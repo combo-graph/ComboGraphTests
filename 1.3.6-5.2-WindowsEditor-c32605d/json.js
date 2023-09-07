@@ -2,7 +2,7 @@ const json = {
     "devices": [
         {
             "deviceName": "DESKTOP-TAT57NG",
-            "instance": "DESKTOP-TAT57NG-1115CFF745086829F048FFAED0CB46AA-45233EBE43F03A53FE2F03AC75F18C5D",
+            "instance": "DESKTOP-TAT57NG-2F2F7B394BFA062834E6E3BA20C42C50-5D55900542AE46E6A8A016AB663D25B9",
             "platform": "WindowsEditor",
             "oSVersion": "Windows 11 (22H2) [10.0.22621.2215] ",
             "model": "Default",
@@ -14,13 +14,13 @@ const json = {
             "appInstanceLog": ""
         }
     ],
-    "reportCreatedOn": "2023.09.05-17.52.30",
+    "reportCreatedOn": "2023.09.07-14.48.11",
     "succeeded": 25,
     "succeededWithWarnings": 0,
     "failed": 0,
     "notRun": 0,
     "inProcess": 0,
-    "totalDuration": 13.064215660095215,
+    "totalDuration": 13.204090118408203,
     "comparisonExported": false,
     "comparisonExportDirectory": "",
     "tests": [
@@ -29,7 +29,7 @@ const json = {
             "fullTestPath": "ComboGraph.Basics.should have attributes initialized",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01838020235300064,
+            "duration": 0.025658298283815384,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [],
             "warnings": 0,
@@ -41,7 +41,7 @@ const json = {
             "fullTestPath": "ComboGraph.Basics.should setup world and such",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.010244999080896378,
+            "duration": 0.012441299855709076,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [],
             "warnings": 0,
@@ -53,7 +53,7 @@ const json = {
             "fullTestPath": "ComboGraph.Feature Testing.should decrease stamina on ability activation when playing first montage",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.13578900694847107,
+            "duration": 0.18773549795150757,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -65,7 +65,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
+                    "timestamp": "2023.09.07-12.47.54"
                 },
                 {
                     "event": {
@@ -76,7 +76,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
+                    "timestamp": "2023.09.07-12.47.54"
                 },
                 {
                     "event": {
@@ -87,7 +87,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
+                    "timestamp": "2023.09.07-12.47.54"
                 },
                 {
                     "event": {
@@ -98,7 +98,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
+                    "timestamp": "2023.09.07-12.47.54"
                 },
                 {
                     "event": {
@@ -109,7 +109,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
+                    "timestamp": "2023.09.07-12.47.54"
                 },
                 {
                     "event": {
@@ -120,7 +120,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
+                    "timestamp": "2023.09.07-12.47.54"
                 },
                 {
                     "event": {
@@ -131,18 +131,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
-                },
-                {
-                    "event": {
-                        "type": "Info",
-                        "message": "LogAnimationCompression: Fetched compressed animation data for AnimSequence /ComboGraphTests/Fixtures/Animations/Melee_A.Melee_A",
-                        "context": "",
-                        "artifact": "00000000000000000000000000000000"
-                    },
-                    "filename": "",
-                    "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
+                    "timestamp": "2023.09.07-12.47.54"
                 },
                 {
                     "event": {
@@ -153,7 +142,18 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.12"
+                    "timestamp": "2023.09.07-12.47.54"
+                },
+                {
+                    "event": {
+                        "type": "Info",
+                        "message": "LogAnimationCompression: Fetched compressed animation data for AnimSequence /ComboGraphTests/Fixtures/Animations/Melee_A.Melee_A",
+                        "context": "",
+                        "artifact": "00000000000000000000000000000000"
+                    },
+                    "filename": "",
+                    "lineNumber": -1,
+                    "timestamp": "2023.09.07-12.47.54"
                 }
             ],
             "warnings": 0,
@@ -165,7 +165,7 @@ const json = {
             "fullTestPath": "ComboGraph.Feature Testing.should have attributes initialized",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.011210300028324127,
+            "duration": 0.012078102678060532,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [],
             "warnings": 0,
@@ -177,7 +177,7 @@ const json = {
             "fullTestPath": "ComboGraph.Feature Testing.should setup world and such",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.010598000138998032,
+            "duration": 0.01201150193810463,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [],
             "warnings": 0,
@@ -189,7 +189,7 @@ const json = {
             "fullTestPath": "ComboGraph.Feature Testing.wtf",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01829100027680397,
+            "duration": 0.019474800676107407,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -201,7 +201,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.13"
+                    "timestamp": "2023.09.07-12.47.54"
                 },
                 {
                     "event": {
@@ -212,7 +212,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.13"
+                    "timestamp": "2023.09.07-12.47.54"
                 }
             ],
             "warnings": 0,
@@ -224,7 +224,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.ComboGraph should be created",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.011342000216245651,
+            "duration": 0.013252098113298416,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [],
             "warnings": 0,
@@ -236,7 +236,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.ComboGraph.EntryNode is created",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.011570900678634644,
+            "duration": 0.013952799141407013,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [],
             "warnings": 0,
@@ -248,7 +248,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.ComboGraph.FirstNode is created",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.010975897312164307,
+            "duration": 0.01209680363535881,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [],
             "warnings": 0,
@@ -260,7 +260,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphAbilityTask_StartGraph.GetCurrentNode()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.011493802070617676,
+            "duration": 0.016460899263620377,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -272,7 +272,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.13"
+                    "timestamp": "2023.09.07-12.47.55"
                 },
                 {
                     "event": {
@@ -283,7 +283,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.13"
+                    "timestamp": "2023.09.07-12.47.55"
                 }
             ],
             "warnings": 0,
@@ -295,7 +295,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphAbilityTask_StartGraph.GetPreviousNode()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.012551199644804,
+            "duration": 0.0166516974568367,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -307,7 +307,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.55"
                 },
                 {
                     "event": {
@@ -318,7 +318,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.55"
                 },
                 {
                     "event": {
@@ -329,7 +329,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.55"
                 }
             ],
             "warnings": 0,
@@ -341,7 +341,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.first node should be anim based",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01238889992237091,
+            "duration": 0.017962101846933365,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -353,7 +353,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.55"
                 },
                 {
                     "event": {
@@ -364,7 +364,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.55"
                 }
             ],
             "warnings": 0,
@@ -376,7 +376,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAnimationAsset()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01218630000948906,
+            "duration": 0.016842197626829147,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -388,7 +388,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.55"
                 },
                 {
                     "event": {
@@ -399,7 +399,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.55"
                 }
             ],
             "warnings": 0,
@@ -411,7 +411,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAnimationClass()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.012076601386070251,
+            "duration": 0.015529699623584747,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -423,7 +423,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.56"
                 },
                 {
                     "event": {
@@ -434,7 +434,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.14"
+                    "timestamp": "2023.09.07-12.47.56"
                 }
             ],
             "warnings": 0,
@@ -446,7 +446,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAvatarActor()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01258079707622528,
+            "duration": 0.015195697546005249,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -458,7 +458,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.56"
                 },
                 {
                     "event": {
@@ -469,7 +469,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.56"
                 }
             ],
             "warnings": 0,
@@ -481,7 +481,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAvatarAsCharacter()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01244949921965599,
+            "duration": 0.015052001923322678,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -493,7 +493,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.56"
                 },
                 {
                     "event": {
@@ -504,7 +504,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.56"
                 }
             ],
             "warnings": 0,
@@ -516,7 +516,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetAvatarAsPawn()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01165900006890297,
+            "duration": 0.015392698347568512,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -528,7 +528,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.56"
                 },
                 {
                     "event": {
@@ -539,7 +539,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.56"
                 }
             ],
             "warnings": 0,
@@ -551,7 +551,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetChildren()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.022852398455142975,
+            "duration": 0.026587802916765213,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -563,7 +563,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.57"
                 },
                 {
                     "event": {
@@ -574,7 +574,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.57"
                 },
                 {
                     "event": {
@@ -585,7 +585,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.15"
+                    "timestamp": "2023.09.07-12.47.57"
                 }
             ],
             "warnings": 0,
@@ -597,7 +597,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetNodeTitle()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.012122899293899536,
+            "duration": 0.015099100768566132,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -609,7 +609,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.16"
+                    "timestamp": "2023.09.07-12.47.57"
                 },
                 {
                     "event": {
@@ -620,7 +620,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.16"
+                    "timestamp": "2023.09.07-12.47.57"
                 }
             ],
             "warnings": 0,
@@ -632,7 +632,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetOwnerActor()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.012242697179317474,
+            "duration": 0.014715801924467087,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -644,7 +644,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.16"
+                    "timestamp": "2023.09.07-12.47.57"
                 },
                 {
                     "event": {
@@ -655,7 +655,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.16"
+                    "timestamp": "2023.09.07-12.47.57"
                 }
             ],
             "warnings": 0,
@@ -667,7 +667,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetOwningAbility()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01201549917459488,
+            "duration": 0.014798402786254883,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -679,7 +679,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.16"
+                    "timestamp": "2023.09.07-12.47.58"
                 },
                 {
                     "event": {
@@ -690,7 +690,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.16"
+                    "timestamp": "2023.09.07-12.47.58"
                 },
                 {
                     "event": {
@@ -701,7 +701,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.16"
+                    "timestamp": "2023.09.07-12.47.58"
                 }
             ],
             "warnings": 0,
@@ -713,7 +713,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetOwningGraph()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.012517698109149933,
+            "duration": 0.015596497803926468,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -725,7 +725,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.17"
+                    "timestamp": "2023.09.07-12.47.58"
                 },
                 {
                     "event": {
@@ -736,7 +736,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.17"
+                    "timestamp": "2023.09.07-12.47.58"
                 }
             ],
             "warnings": 0,
@@ -748,7 +748,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetOwningTask()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.01257609948515892,
+            "duration": 0.015206199139356613,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -760,7 +760,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.17"
+                    "timestamp": "2023.09.07-12.47.58"
                 },
                 {
                     "event": {
@@ -771,7 +771,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.17"
+                    "timestamp": "2023.09.07-12.47.58"
                 },
                 {
                     "event": {
@@ -782,7 +782,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.17"
+                    "timestamp": "2023.09.07-12.47.58"
                 }
             ],
             "warnings": 0,
@@ -794,7 +794,7 @@ const json = {
             "fullTestPath": "ComboGraph.Nodes.ComboGraph Task and Nodes API.Task / Node.UComboGraphNodeAnimBase.GetPreviousNode()",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 0.011932402849197388,
+            "duration": 0.016212202608585358,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -806,7 +806,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.17"
+                    "timestamp": "2023.09.07-12.47.58"
                 },
                 {
                     "event": {
@@ -817,7 +817,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.17"
+                    "timestamp": "2023.09.07-12.47.58"
                 }
             ],
             "warnings": 0,
@@ -829,7 +829,7 @@ const json = {
             "fullTestPath": "Project.Functional Tests.ComboGraphTests.FunctionalTests.Maps.F_ComboGraph_Map.F_ComboGraph_Test",
             "state": "Success",
             "deviceInstance": [],
-            "duration": 12.63216781616211,
+            "duration": 12.648085594177246,
             "dateTime": "0001.01.01-00.00.00",
             "entries": [
                 {
@@ -841,7 +841,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.20"
+                    "timestamp": "2023.09.07-12.48.02"
                 },
                 {
                     "event": {
@@ -852,18 +852,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.21"
-                },
-                {
-                    "event": {
-                        "type": "Info",
-                        "message": "LogAnimationCompression: Fetched compressed animation data for AnimSequence /ComboGraphTests/Fixtures/Animations/Melee_C.Melee_C",
-                        "context": "",
-                        "artifact": "00000000000000000000000000000000"
-                    },
-                    "filename": "",
-                    "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.23"
+                    "timestamp": "2023.09.07-12.48.03"
                 },
                 {
                     "event": {
@@ -874,7 +863,18 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.23"
+                    "timestamp": "2023.09.07-12.48.04"
+                },
+                {
+                    "event": {
+                        "type": "Info",
+                        "message": "LogAnimationCompression: Fetched compressed animation data for AnimSequence /ComboGraphTests/Fixtures/Animations/Melee_C.Melee_C",
+                        "context": "",
+                        "artifact": "00000000000000000000000000000000"
+                    },
+                    "filename": "",
+                    "lineNumber": -1,
+                    "timestamp": "2023.09.07-12.48.04"
                 },
                 {
                     "event": {
@@ -885,7 +885,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.26"
+                    "timestamp": "2023.09.07-12.48.07"
                 },
                 {
                     "event": {
@@ -896,7 +896,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.27"
+                    "timestamp": "2023.09.07-12.48.08"
                 },
                 {
                     "event": {
@@ -907,7 +907,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.28"
+                    "timestamp": "2023.09.07-12.48.10"
                 },
                 {
                     "event": {
@@ -918,7 +918,7 @@ const json = {
                     },
                     "filename": "",
                     "lineNumber": -1,
-                    "timestamp": "2023.09.05-15.52.30"
+                    "timestamp": "2023.09.07-12.48.11"
                 }
             ],
             "warnings": 0,
