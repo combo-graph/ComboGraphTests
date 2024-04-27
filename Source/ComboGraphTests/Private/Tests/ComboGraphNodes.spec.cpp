@@ -128,7 +128,7 @@ void FComboGraphNodesSpec::Define()
 						{
 							Done.Execute();
 							return false;
-						}));
+						}), 1.2f);
 					});
 
 					TickWorld(1.f);
