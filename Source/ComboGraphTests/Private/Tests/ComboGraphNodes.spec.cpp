@@ -60,6 +60,7 @@ BEGIN_DEFINE_SPEC(FComboGraphNodesSpec, "ComboGraph.Nodes", EAutomationTestFlags
 			GFrameCounter++;
 		}
 	}
+
 END_DEFINE_SPEC(FComboGraphNodesSpec)
 
 void FComboGraphNodesSpec::Define()
@@ -103,11 +104,7 @@ void FComboGraphNodesSpec::Define()
 		});
 
 		// Latent action seems to be broken on 5.3 preview
-#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION == 3
-		xDescribe("Task / Node", [this]()
-#else
 		Describe("Task / Node", [this]()
-#endif
 		{
 			LatentBeforeEach([this](const FDoneDelegate& Done)
 			{
@@ -120,13 +117,18 @@ void FComboGraphNodesSpec::Define()
 					TESTS_LOG(Display, TEXT("DispatchBeginPlay()"))
 					SourceActor->DispatchBeginPlay();
 
-					// And activated once, so as to make sure Node is updated with gameplay task owner interface calls
+					// And activated once, to make sure Node is updated with gameplay task owner interface calls
 					TESTS_LOG(Display, TEXT("TryActivateAbilityByClass(%s)"), *GetNameSafe(AbilityType))
 					SourceASC->TryActivateAbilityByClass(AbilityType);
 
-					World->GetTimerManager().SetTimerForNextTick([Done]()
+					// Async task offload on game thread seems to be necessary on 5.3 / 5.4 - likely engine bug. Test without on future engine updates.
+					AsyncTask(ENamedThreads::GameThread, [this, Done]()
 					{
-						Done.Execute();
+						FTSTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateLambda([this, Done](float Delta)
+						{
+							Done.Execute();
+							return false;
+						}));
 					});
 
 					TickWorld(1.f);

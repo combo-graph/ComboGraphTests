@@ -1,10 +1,10 @@
 // Copyright 2021 Mickael Daniel. All Rights Reserved.
 
+#include "ComboGraphTestsLog.h"
 #include "Abilities/ComboGraphTestAbilitySystemCharacter.h"
 #include "Abilities/ComboGraphTestHealthSet.h"
 #include "Abilities/ComboGraphTestStaminaSet.h"
 #include "Misc/AutomationTest.h"
-#include "Runtime/Launch/Resources/Version.h"
 
 BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)
 	UWorld* World;
@@ -22,6 +22,12 @@ BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFi
 
 	uint64 InitialFrameCounter = 0;
 
+	void DebugInfo(const FString& InMessage)
+	{
+		UE_LOG(LogComboGraphTests, Display, TEXT("%s"), *InMessage)
+		AddInfo(InMessage);
+	}
+
 	void CreateAndSetupWorld()
 	{
 		World = UWorld::CreateWorld(EWorldType::Game, false);
@@ -38,6 +44,19 @@ BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFi
 	void TeardownWorld()
 	{
 		GFrameCounter = InitialFrameCounter;
+
+#if WITH_EDITOR
+		if (GIsEditor)
+		{
+			World->EditorDestroyActor(SourceActor, /*bShouldModifyLevel*/false);
+			World->EditorDestroyActor(TargetActor, /*bShouldModifyLevel*/false);
+		}
+		else
+#endif	// WITH_EDITOR
+		{
+			World->DestroyActor(SourceActor, /*bNetForce*/false, /*bShouldModifyLevel*/false);
+			World->DestroyActor(TargetActor, /*bNetForce*/false, /*bShouldModifyLevel*/false);
+		}
 
 		GEngine->DestroyWorldContext(World);
 		World->DestroyWorld(false);
@@ -74,6 +93,7 @@ BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFi
 		}
 		return DataTable;
 	}
+
 END_DEFINE_SPEC(FComboGraphSpec)
 
 void FComboGraphSpec::Define()
@@ -82,6 +102,8 @@ void FComboGraphSpec::Define()
 	{
 		BeforeEach([this]()
 		{
+			DebugInfo(TEXT("Basics: Create and setup world"));
+
 			// Setup tests
 			CreateAndSetupWorld();
 
@@ -98,6 +120,8 @@ void FComboGraphSpec::Define()
 			TargetActor->GrantedAttributes.Add(UComboGraphTestHealthSet::StaticClass());
 			TargetActor->AttributesDataTable = CreateAttributesDataTable();
 			TargetActor->GrantDefaultAttributes();
+
+			DebugInfo(TEXT("Basics: Before Each Done"));
 		});
 
 		It("should setup world and such", [this]()
@@ -125,11 +149,14 @@ void FComboGraphSpec::Define()
 
 	Describe("Feature Testing", [this]()
 	{
-
 		BeforeEach([this]()
 		{
+			DebugInfo(TEXT("Feature Testing: Create and setup world"));
+
 			// Setup tests
 			CreateAndSetupWorld();
+
+			DebugInfo(TEXT("World created"));
 
 			ActorType = StaticLoadClass(AComboGraphTestAbilitySystemCharacter::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/Characters/BP_Test_AbilitySystemCharacter.BP_Test_AbilitySystemCharacter_C"));
 			AbilityType = StaticLoadClass(UGameplayAbility::StaticClass(), nullptr, TEXT("/ComboGraphTests/Fixtures/GA_Combo_TestFixture.GA_Combo_TestFixture_C"));
@@ -145,6 +172,8 @@ void FComboGraphSpec::Define()
 			// set up the destination actor
 			TargetActor = CastChecked<AComboGraphTestAbilitySystemCharacter>(World->SpawnActor(ActorType, nullptr, nullptr, FActorSpawnParameters()));
 			TargetASC = TargetActor->GetAbilitySystemComponent();
+
+			DebugInfo(TEXT("Feature Testing Before Each Done"));
 		});
 
 		It("should setup world and such", [this]()
@@ -168,67 +197,64 @@ void FComboGraphSpec::Define()
 			TestEqual("Target ASC AttributeSet Stamina is initialized to 100.f", TargetASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 100.f);
 		});
 
-		// Latent action seems to be broken on 5.3 preview
-		LatentIt(TEXT("wtf"), [this](const FDoneDelegate& Done)
+		LatentIt("should decrease stamina on ability activation when playing first montage", [this](const FDoneDelegate& Done)
 		{
-			AddInfo(FString::Printf(TEXT("Definitely wtf")));
-			AsyncTask(
-				ENamedThreads::GameThread,
-				[this, Done]()
+			// Async task offload on game thread seems to be necessary on 5.3 / 5.4 - likely engine bug. Test without on future engine updates.
+			AsyncTask(ENamedThreads::GameThread, [this, Done]()
+			{
+				FTSTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateLambda([this, Done](float Delta)
 				{
+					TestEqual("Source ASC AttributeSet Stamina is expected to be 90.f now", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 90.f);
 					AddInfo(FString::Printf(TEXT("Spec done")));
 					Done.Execute();
-				}
-			);
-		});
 
-#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION == 3
-		xLatentIt("should decrease stamina on ability activation when playing first montage", [this](const FDoneDelegate& Done)
-#else
-		LatentIt("should decrease stamina on ability activation when playing first montage", [this](const FDoneDelegate& Done)
-#endif
-		{
+					return false;
+				}), 0.5f);
+			});
+
 			TestEqual("Source ASC AttributeSet Stamina is initialized to 100.f", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 100.f);
 
+			AddInfo(FString::Printf(TEXT("Dispatch Begin Play")));
 			SourceActor->DispatchBeginPlay();
 
 			const TArray<FGameplayAbilitySpec> ActivatableAbilities = SourceASC->GetActivatableAbilities();
 			TestEqual("Number of abilities granted is 2", ActivatableAbilities.Num(), 2);
 
 			const bool bSuccess = SourceASC->TryActivateAbilityByClass(AbilityType);
+
+			AddInfo(FString::Printf(TEXT("Ability %s was activated, status: %s"), *GetNameSafe(AbilityType), *LexToString(bSuccess)));
 			TestTrue("Ability was activated", bSuccess);
 
-			// FTimerHandle Handle;
-			// World->GetTimerManager().SetTimer(Handle, [this, Done]()
-			// {
-			// 	TestEqual("Source ASC AttributeSet Stamina is expected to be 90.f now", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 90.f);
-			// 	AddInfo(FString::Printf(TEXT("Spec done")));
-			// 	Done.Execute();
-			// }, 0.5f, false);
+			TickWorld(1.5f);
+		});
 
-			// AsyncTask(
-			// 	ENamedThreads::GameThread,
-			// 	[this, Done]()
-			// 	{
-			//
-			// 		World->GetTimerManager().SetTimerForNextTick([this, Done]()
-			// 		{
-			// 			TestEqual("Source ASC AttributeSet Stamina is expected to be 90.f now", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 90.f);
-			// 			AddInfo(FString::Printf(TEXT("Spec done")));
-			// 			Done.Execute();
-			// 		});
-			// 	}
-			// );
-
-			World->GetTimerManager().SetTimerForNextTick([this, Done]()
+		xDescribe(TEXT("Laten spec issue debug on 5.3 / 5.4"), [this]()
+		{
+			// Latent action seems to have issue on 5.3 preview
+			LatentIt(TEXT("Latent test - OK"), [this](const FDoneDelegate& Done)
 			{
-				TestEqual("Source ASC AttributeSet Stamina is expected to be 90.f now", SourceASC->GetNumericAttributeBase(UComboGraphTestStaminaSet::GetStaminaAttribute()), 90.f);
-				AddInfo(FString::Printf(TEXT("Spec done")));
+				AddInfo(FString::Printf(TEXT("Definitely wtf")));
+				AsyncTask(
+					ENamedThreads::GameThread,
+					[this, Done]()
+					{
+						AddInfo(FString::Printf(TEXT("Spec done")));
+						Done.Execute();
+					}
+				);
+			});
+
+			LatentIt(TEXT("Latent test - NOK - It does timeout"), [this](const FDoneDelegate& Done)
+			{
+				AddInfo(FString::Printf(TEXT("Definitely wtf")));
 				Done.Execute();
 			});
 
-			// Tick world a little so that timer is processed
-			TickWorld(0.1f);
+			LatentIt(TEXT("Latent test - OK - It does not timeout"), EAsyncExecution::ThreadPool, [this](const FDoneDelegate& Done)
+			{
+				AddInfo(FString::Printf(TEXT("Definitely wtf")));
+				Done.Execute();
+			});
 		});
 
 		AfterEach([this]()
