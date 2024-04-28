@@ -31,7 +31,7 @@ void AComboGraphTestAbilitySystemCharacter::PostInitializeComponents()
 
 	TArray<FGameplayAttribute> Attributes;
 	AbilitySystemComponent->GetAllAttributes(Attributes);
-	for (FGameplayAttribute Attribute : Attributes)
+	for (const FGameplayAttribute& Attribute : Attributes)
 	{
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(Attribute).AddUObject(this, &AComboGraphTestAbilitySystemCharacter::ReceiveAttributeChange);
 	}
@@ -45,7 +45,7 @@ void AComboGraphTestAbilitySystemCharacter::EndPlay(const EEndPlayReason::Type E
 		TArray<FGameplayAttribute> Attributes;
 		AbilitySystemComponent->GetAllAttributes(Attributes);
 
-		for (const FGameplayAttribute Attribute : Attributes)
+		for (const FGameplayAttribute& Attribute : Attributes)
 		{
 			AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(Attribute).RemoveAll(this);
 		}

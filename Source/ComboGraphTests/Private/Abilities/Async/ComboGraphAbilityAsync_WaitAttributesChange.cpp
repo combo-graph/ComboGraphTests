@@ -24,7 +24,7 @@ void UComboGraphAbilityAsync_WaitAttributesChange::Activate()
 	UAbilitySystemComponent* ASC = GetAbilitySystemComponent();
 	if (ASC)
 	{
-		for (const FGameplayAttribute Attribute : Attributes)
+		for (const FGameplayAttribute& Attribute : Attributes)
 		{
 			ASC->GetGameplayAttributeValueChangeDelegate(Attribute).AddUObject(this, &UComboGraphAbilityAsync_WaitAttributesChange::OnAttributeChange);
 		}
@@ -40,7 +40,7 @@ void UComboGraphAbilityAsync_WaitAttributesChange::EndAction()
 	UAbilitySystemComponent* ASC = GetAbilitySystemComponent();
 	if (ASC)
 	{
-		for (const FGameplayAttribute Attribute : Attributes)
+		for (const FGameplayAttribute& Attribute : Attributes)
 		{
 			ASC->GetGameplayAttributeValueChangeDelegate(Attribute).RemoveAll(this);
 		}
