@@ -142,7 +142,7 @@ void FComboGraphNodesSpec::Define()
 					const UComboGraphAbilityTask_StartGraph* Task = Node->K2_GetOwningTask();
 					TestTrue("Owning Task", Task != nullptr);
 					TestTrue("Owning Task Name Valid", GetNameSafe(Task).StartsWith("ComboGraphAbilityTask_StartGraph_"));
-					TestEqual("Current Node is set to first descendant node of entry", Task->GetCurrentNode(), Node);
+					TestEqual("Current Node is set to first descendant node of entry", Cast<UComboGraphNodeAnimBase>(Task->GetCurrentNode()), Node);
 				});
 
 				It("GetPreviousNode()", [this]()
