@@ -5,8 +5,13 @@
 #include "Abilities/ComboGraphTestHealthSet.h"
 #include "Abilities/ComboGraphTestStaminaSet.h"
 #include "Misc/AutomationTest.h"
+#include "Misc/EngineVersionComparison.h"
 
-BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)
+#if UE_VERSION_OLDER_THAN(5, 5, 0)
+#include "ComboGraphTestFlags.h"
+#endif
+
+BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFilter | EAutomationTestFlags_ApplicationContextMask)
 	UWorld* World;
 
 	TSubclassOf<AComboGraphTestAbilitySystemCharacter> ActorType;
