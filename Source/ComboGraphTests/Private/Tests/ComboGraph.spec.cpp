@@ -4,8 +4,12 @@
 #include "Abilities/ComboGraphTestAbilitySystemCharacter.h"
 #include "Abilities/ComboGraphTestHealthSet.h"
 #include "Abilities/ComboGraphTestStaminaSet.h"
+#include "Engine/Engine.h"
+#include "Engine/World.h"
+#include "GameFramework/PlayerController.h"
 #include "Misc/AutomationTest.h"
 #include "Misc/EngineVersionComparison.h"
+#include "UObject/Package.h"
 
 #if UE_VERSION_OLDER_THAN(5, 5, 0)
 #include "ComboGraphTestFlags.h"
@@ -87,7 +91,8 @@ BEGIN_DEFINE_SPEC(FComboGraphSpec, "ComboGraph", EAutomationTestFlags::ProductFi
 		CSV.Append(TEXT("\r\nComboGraphTestHealthSet.MaxHealth,\"500.000000\",\"0.000000\",\"1.000000\",\"\",\"False\""));
 		CSV.Append(TEXT("\r\nComboGraphTestHealthSet.Health,\"500.000000\",\"0.000000\",\"1.000000\",\"\",\"False\""));
 
-		UDataTable* DataTable = NewObject<UDataTable>(GetTransientPackage(), FName(TEXT("TempDataTable")));
+		const FName TempDataTableName = TEXT("TempDataTable");
+		UDataTable* DataTable = NewObject<UDataTable>(GetTransientPackage(), TempDataTableName);
 		DataTable->RowStruct = FAttributeMetaData::StaticStruct();
 		DataTable->CreateTableFromCSVString(CSV);
 
